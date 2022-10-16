@@ -1,8 +1,6 @@
 # Game and solver for TicTacSlide
 # Basic pygame code modified from https://techvidvan.com/tutorials/python-game-project-tic-tac-toe/
 
-from doctest import OutputChecker
-from turtle import end_fill
 import numpy as np
 import pygame
 import time
@@ -46,14 +44,14 @@ class Game():
         pygame.display.set_caption("Tic Tac Toe")
 
         # Loading the images
-        opening = pygame.image.load(os.path.join(__location__, 'tic tac opening.png'))
+        opening = pygame.image.load(os.path.join(__location__, 'tic tac opening.jpg'))
         x_img = pygame.image.load(os.path.join(__location__, 'x.png'))
         o_img = pygame.image.load(os.path.join(__location__, 'o.png'))
 
         # Resizing images
-        self.x_img = pygame.transform.scale(x_img, (self.IMG,self.IMG))
-        self.o_img = pygame.transform.scale(o_img, (self.IMG,self.IMG))
-        self.opening = pygame.transform.scale(opening, (self.D, self.D))
+        self.x_img = pygame.transform.smoothscale(x_img, (self.IMG,self.IMG))
+        self.o_img = pygame.transform.smoothscale(o_img, (self.IMG,self.IMG))
+        self.opening = pygame.transform.smoothscale(opening, (self.D, self.D))
         
         # Run the load screen
         self.load_screen()
